@@ -6,7 +6,10 @@ import fs from "fs"
 import path from "path"
 
 const clients = new Set()
-const wss = new WebSocketServer({ port: 8081 })
+
+const port = 8000
+
+const wss = new WebSocketServer({ port: port + 1 })
 
 wss.on("connection", (ws) => {
   clients.add(ws)
@@ -44,10 +47,10 @@ serve({
 
     return new Response("Not Found", { status: 404 })
   },
-  port: 8080,
+  port: port,
 })
 
-console.log(`HTTP server running at http://localhost:8080`)
+console.log(`HTTP server running at http://localhost:${port}`)
 
 function getContentType(filePath) {
   if (filePath.endsWith(".html")) return "text/html"
