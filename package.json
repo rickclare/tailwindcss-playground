@@ -1,0 +1,17 @@
+{
+  "name": "tailwindcss-playground",
+  "private": true,
+  "scripts": {
+    "serve": "bun --bun server.js",
+    "build:css": "tailwindcss --postcss --input=assets/app.css --output=build/app.css",
+    "build:js": "bun --bun build ./assets/app.js --outfile=build/app.js",
+    "deps:update": "bun x --bun npm-check-updates@latest --interactive --root --format=group --packageManager=bun --install=always"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "v4.0.0-alpha.31",
+    "chokidar": "^4.0.1",
+    "lodash.debounce": "^4.0.8",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "tailwindcss": "v4.0.0-alpha.31"
+  }
+}
