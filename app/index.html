@@ -8,9 +8,34 @@
     <script defer src="build/app.js"></script>
   </head>
   <body class="antialiased">
-    <main class="flex min-h-dvh flex-col items-center justify-center bg-neutral-50 p-4">
+    <main class="flex min-h-dvh flex-col items-center justify-center p-4">
       <h1 class="mb-4 text-2xl">Hello World!</h1>
       <p class="text-neutral-500">This is a simple playground for testing Tailwind CSS</p>
+
+      <div class="mt-4 grid gap-2">
+        <div class="text-primary">Primary</div>
+        <button class="btn btn-primary">CornflowerBlue</button>
+
+        <div class="text-secondary">Secondary</div>
+        <button class="btn btn-secondary">PaleVioletRed</button>
+
+        <div class="text-tertiary-10">Tertiary 10</div>
+        <div class="text-tertiary-20">Tertiary 20</div>
+        <div class="text-tertiary-30">Tertiary 30</div>
+        <div class="text-tertiary-40">Tertiary 40</div>
+        <div class="text-tertiary-50">Tertiary 50</div>
+        <div class="text-tertiary-60">Tertiary 60</div>
+        <div class="text-tertiary-70">Tertiary 70</div>
+        <div class="text-tertiary-80">Tertiary 80</div>
+        <div class="text-tertiary-90">Tertiary 90</div>
+
+        <button class="btn" style="--btn-color: 50% var(--theme-tertiary-ch)">ForestGreen</button>
+
+        <div style="--btn-color: var(--theme-other-lch)">
+          <div class="text-[oklch(var(--btn-color))]">Other</div>
+          <button class="btn w-full">RebeccaPurple</button>
+        </div>
+      </div>
     </main>
   </body>
 </html>

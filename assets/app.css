@@ -1,6 +1,43 @@
 @import "tailwindcss";
+@config "./tailwind.config.js";
+
+@theme {
+  --color-primary: oklch(var(--theme-primary-lch));
+  --color-secondary: oklch(var(--theme-secondary-lch));
+}
+
+@layer base {
+  :root {
+    --theme-primary-lch: 67.46% 0.1414 261.344; /* CornflowerBlue */
+    --theme-secondary-lch: 67.79% 0.1382 0.68; /* PaleVioletRed */
+    --theme-tertiary-ch: 0.1688 142.89; /* ForestGreen */
+    --theme-other-lch: 44.03% 0.1603 303.37; /* RebeccaPurple */
+  }
+}
 
 @layer components {
+  .btn {
+    @apply rounded-md p-2 text-white transition active:scale-95;
+
+    background-color: oklch(var(--btn-color) / var(--opacity, 1));
+
+    &:hover {
+      background-color: color-mix(
+        in oklab,
+        oklch(var(--btn-color) / var(--opacity, 1)) 90%,
+        black
+      );
+    }
+  }
+
+  .btn-primary {
+    --btn-color: var(--theme-primary-lch);
+  }
+
+  .btn-secondary {
+    --btn-color: var(--theme-secondary-lch);
+  }
+
   .bingo {
     @apply font-bold;
   }
